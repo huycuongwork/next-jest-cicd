@@ -4,10 +4,24 @@ type Params = {
   };
 };
 
+export async function generateStaticParams() {
+  return [
+    { slug: "first-post" },
+    { slug: "second-post" },
+    { slug: "third-post" },
+  ];
+}
+
 export async function generateMetadata({ params }: Params) {
   return { title: `Post: ${params.slug}` };
 }
 
 export default function Page({ params }: Params) {
-  return <h1>Slug: {params.slug}</h1>;
+  return (
+    <>
+      <h1>Slug: {params.slug}</h1>
+      <p>hole tex</p>
+      <p>welcome to HCM</p>
+    </>
+  );
 }
